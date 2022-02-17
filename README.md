@@ -11,10 +11,20 @@ But before proceeding to the exercise, study and follow first the instructions i
 Persistence Guide handout.
 
 The handout folder contains the following:  
-  -Persistence Guide handout  
-  -template for user interface used in the persistence discussion  
-    +main.dart  
-    +ShowTextPage.dart  
-  -Exercise Specification  
+  - Persistence Guide handout  
+  - template for user interface used in the persistence discussion  
+    + main.dart  
+    + ShowTextPage.dart  
+  - Exercise Specification  
 
-Don't forget to modify this ReadMe file when you submit your exercises.
+Don't forget to modify this ReadMe file when you submit your exercises. Below is a sample template for your ReadMe file:    
+
+# CMSC 23 Exercise 03 - ToDo Application
+## Johaira Mae T. Arriola
+## 2019-12345
+## CMSC 23 B-0L
+
+# Application Overview
+- test scenarios with screenshots of the mobile app
+- explanation of the classes and libraries used
+
