@@ -10,11 +10,11 @@ It can also be your starting point for exercise 3 (To Do Flutter application).
 But before proceeding to the exercise, study and follow first the instructions indicated in 
 Persistence Guide handout.
 
-The handout folder contains the following:
-  -Persistence Guide handout
-  -template for user interface used in the persistence discussion
-    +main.dart
-    +ShowTextPage.dart
-  -Exercise Specification
+The handout folder contains the following:  
+  -Persistence Guide handout  
+  -template for user interface used in the persistence discussion  
+    +main.dart  
+    +ShowTextPage.dart  
+  -Exercise Specification  
 
 Don't forget to modify this ReadMe file when you submit your exercises.
