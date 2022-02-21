@@ -19,12 +19,24 @@ The handout folder contains the following:
 
 Don't forget to modify this ReadMe file when you submit your exercises. Below is a sample template for your ReadMe file:    
 
-# CMSC 23 Exercise 03 - ToDo Application
-## Johaira Mae T. Arriola
-## 2019-12345
-## CMSC 23 B-0L
+# Exercise 03 ToDo App
+### Add name here
+### Student number
+### Section
 
-# Application Overview
-- test scenarios with screenshots of the mobile app
-- explanation of the classes and libraries used
+# Exercise Description
 
+
+# Naming your App
+```
+surnameinitials_exer3_section e.g. (arriolajmt_exer3_wx1l).
+```
+
+# Documentation
+- You must add screenshots of your work.
+- What did you add to the code.
+- How are you able to do the exercise.
+- Challenges met while doing the exercise.
+
+
+Contact your lab instructor if you have any concerns, inquiries or problems in your exercise.
