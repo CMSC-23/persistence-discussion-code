@@ -24,13 +24,9 @@ Don't forget to modify this ReadMe file when you submit your exercises. Below is
 ### Student number
 ### Section
 
-# Exercise Description
+# Application overview
+- Write a description or overview of your application here
 
-
-# Naming your App
-```
-surnameinitials_exer3_section e.g. (arriolajmt_exer3_wx1l).
-```
 
 # Documentation
 - You must add screenshots of your work.
