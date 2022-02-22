@@ -16,23 +16,3 @@ The handout folder contains the following:
     + main.dart  
     + ShowTextPage.dart  
   - Exercise Specification  
-
-Don't forget to modify this ReadMe file when you submit your exercises. Below is a sample template for your ReadMe file:    
-
-# Exercise 03 ToDo App
-### Add name here
-### Student number
-### Section
-
-# Application overview
-- Write a description or overview of your application here
-
-
-# Documentation
-- You must add screenshots of your work.
-- What did you add to the code.
-- How are you able to do the exercise.
-- Challenges met while doing the exercise.
-
-
-Contact your lab instructor if you have any concerns, inquiries or problems in your exercise.
