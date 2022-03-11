@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+//import necessary packages
 import 'db_helper.dart';
 import 'dog_model.dart';
 import 'show_dogs_page.dart';
 
 void main() {
+  //move here the ensureInitialized method of WidgetsFlutterBinding from the db_helper.dart
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
@@ -34,14 +36,14 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  final TextEditingController _controller = TextEditingController(); //controller for getting name
-  final TextEditingController _controller2 = TextEditingController(); //controller for getting age
+  final TextEditingController _name = TextEditingController(); //controller for getting name
+  final TextEditingController _age = TextEditingController(); //controller for getting age
   final _formKey = GlobalKey<FormState>();
 
   //create a DBHelper object to access database functions
   DBHelper db = DBHelper();
 
-  //counter variable for Dog id
+  //create a counter variable for Dog id
   int counter = 0;
 
   final bool _validate = false; //used for validation of input
@@ -57,8 +59,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            buildTextField('Enter name', _controller),
-            buildTextField('Enter age', _controller2),
+            buildTextField('Enter name', _name),
+            buildTextField('Enter age', _age),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -88,7 +90,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           }
 
           //validates if the controller/textfield is for age
-          if (_controller == _controller2){
+          if (_controller == _age){
 
             //checks if input is integer
             if (! _isNumeric(value)){
@@ -108,7 +110,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           if (_formKey.currentState!.validate()) {
               
               //instantiate a dog object 
-              Dog dog1 = Dog(id: counter++, name: _controller.text,age :int.parse(_controller2.text));
+              Dog dog1 = Dog(id: counter++, name: _name.text, age:int.parse(_age.text));
 
               //insert dog object to database
               db.insertDog(dog1);
@@ -117,8 +119,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               const SnackBar(content: Text('Processing Data')),
             );
             //clear text on controllers after successful insert of data to database
-            _controller.clear();
-            _controller2.clear();
+            _name.clear();
+            _age.clear();
           }
         });
   }
@@ -126,9 +128,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget buildViewButton() {
     return ElevatedButton(
       onPressed: () {
-        //navigates to ShowDogsPage that contains list of dogs from the database 
+        //navigate to ShowDogsPage that contains list of dogs from the database 
         Navigator.push(
              context, MaterialPageRoute(builder: (context) => const ShowDogsPage()));
+
       },
       child: const Text("View"),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'db_helper.dart';
+//import necessary packages
 import 'dog_model.dart';
+import 'db_helper.dart';
 
 class ShowDogsPage extends StatefulWidget {
   const ShowDogsPage({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _ShowDogsPageState extends State<ShowDogsPage> {
   DBHelper db = DBHelper();
 
   //create a future list of dog that will store all the dog data from database
-  late Future<List<Dog>> myDog;
+  late Future<List<Dog>> myDog;  
 
   @override
   void initState() {
@@ -23,6 +24,7 @@ class _ShowDogsPageState extends State<ShowDogsPage> {
     
     //initialize myDog list by getting data from database
     myDog = db.dogs();
+
   }
 
   @override
@@ -46,7 +48,7 @@ class _ShowDogsPageState extends State<ShowDogsPage> {
   Widget myDogList() {
     return Expanded(
 
-      //Read more about FutureBuilder here: https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html
+      //NOTE: Read more about FutureBuilder here: https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html
       child: FutureBuilder(
           future: myDog,
           builder: (context, snapshot) {
@@ -62,7 +64,7 @@ class _ShowDogsPageState extends State<ShowDogsPage> {
   //widget that returns listview of myDog data
   Widget buildText(List<Dog> myDog) {
 
-    //read more about ListView here: https://api.flutter.dev/flutter/material/ListTile-class.html
+    //NOTE: read more about ListView here: https://api.flutter.dev/flutter/material/ListTile-class.html
     return ListView.builder(
       physics: const BouncingScrollPhysics(),
       itemCount: myDog.length,
