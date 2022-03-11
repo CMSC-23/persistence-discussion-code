@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'DBHelper.dart';
-import 'Dog.dart';
-import 'ShowTextPage.dart';
+import 'db_helper.dart';
+import 'dog_model.dart';
+import 'show_dogs_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'Flutter Code Sample';
+  static const String _title = 'Persistence';
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   //counter variable for Dog id
   int counter = 0;
 
-  bool _validate = false; //used for validation of input
+  final bool _validate = false; //used for validation of input
 
   @override
   Widget build(BuildContext context) {
@@ -77,14 +77,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return TextFormField(
       controller: _controller,
       decoration: InputDecoration(
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
           labelText: label,
           errorText: _validate ? 'Value can\'t be empty' : null),
       validator: (value) {
+
+        //validates if value in controller/textfield is not empty
           if (value == null || value.isEmpty) {
-            return 'Please enter $label';
+            return 'Please $label';
           }
+
+          //validates if the controller/textfield is for age
           if (_controller == _controller2){
+
+            //checks if input is integer
             if (! _isNumeric(value)){
               return 'Input integer only';
             }
@@ -120,9 +126,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget buildViewButton() {
     return ElevatedButton(
       onPressed: () {
-        //navigates to ShowTextpage that contains list of database content 
+        //navigates to ShowDogsPage that contains list of dogs from the database 
         Navigator.push(
-             context, MaterialPageRoute(builder: (context) => ShowTextpage()));
+             context, MaterialPageRoute(builder: (context) => const ShowDogsPage()));
       },
       child: const Text("View"),
     );
@@ -130,9 +136,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   //function to validate if string is a number
   bool _isNumeric(String result) {
-    if (result == null) {
-      return false;
-    }
     return double.tryParse(result) != null;
   }
 }

@@ -1,15 +1,10 @@
 import 'dart:async';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:flutter/widgets.dart';
-import './Dog.dart';
+import 'dog_model.dart';
 
 class DBHelper {
   
-  // Avoid errors caused by flutter upgrade.
-  // Importing 'package:flutter/widgets.dart' is required.
-  
-
   Future<Database> initializeDB() async {  
     // Open the database and store the reference.
     final database = openDatabase(
